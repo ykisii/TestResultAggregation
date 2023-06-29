@@ -4,11 +4,9 @@ import { CellLocations } from "./cell_locations.ts";
 
 export class XlsxFile implements TestSource {
   protected wb: any;
-  protected locations: CellLocations;
 
   constructor() {
     this.wb = null;
-    this.locations = {no:'', type:'', date:'', result:''};
   }
 
   open(filepath: string): void {
@@ -20,8 +18,5 @@ export class XlsxFile implements TestSource {
   }
   getData() {
     throw new Error("Method not implemented.");
-  }
-  setLocations(locations: CellLocations) {
-    this.locations = locations;
   }
 }
