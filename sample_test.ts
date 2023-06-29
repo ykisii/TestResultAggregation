@@ -1,4 +1,4 @@
-import { XlsxFile } from "./xlsx_fils.ts"
+import { XlsxFile } from "./mod.ts"
 
 export class SampleTest extends XlsxFile {
   constructor(filepath: string) {
