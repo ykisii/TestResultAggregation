@@ -1,6 +1,5 @@
 import * as XLSX from "https://cdn.sheetjs.com/xlsx-0.18.3/package/xlsx.mjs";
 import { TestSource } from "./test_source.ts";
-import { CellLocations } from "./cell_locations.ts";
 
 export class XlsxFile implements TestSource {
   protected wb: any;
