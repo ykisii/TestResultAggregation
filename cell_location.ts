@@ -29,6 +29,7 @@ export class CellLocation {
 
   moveUp() {
     this.#row = this.#row <= 0 ? 0 : this.#row-1;
+    this.setDispName();
   }
 
   private setDispName() {
