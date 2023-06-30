@@ -15,11 +15,12 @@ export class CellLocation {
   }
 
   get dispName(): string {
-    return this.dispName;
+    return this.#dispName;
   }
 
   moveToOrigin() {
     [this.#column, this.#row] = [this.#originColumn, this.#originRow];
+    this.setDispName();
   }
 
   moveDown() {
@@ -28,7 +29,18 @@ export class CellLocation {
   }
 
   moveUp() {
-    this.#row = this.#row <= 0 ? 0 : this.#row-1;
+    this.#row = this.#row <= 1 ? 1 : this.#row-1;
+    this.setDispName();
+  }
+
+  moveRight() {
+    this.#column = String.fromCharCode(this.#column.charCodeAt(0) + 1);
+    this.setDispName();
+  }
+
+  moveLeft() {
+    const column =  this.#column.charCodeAt(0) - 1;
+    this.#column = column <= 'A'.charCodeAt(0)? 'A': String.fromCharCode(column);
     this.setDispName();
   }
 
