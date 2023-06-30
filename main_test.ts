@@ -46,7 +46,7 @@ Deno.test("Cell Location: move right", () => {
 
 Deno.test("Cell Location: move left", () => {
   const location = new CellLocation('K', 1);
-  [...Array(10)].forEach( (_)=> {
+  [...Array(20)].forEach( (_)=> {
     location.moveLeft();
   });
   assertEquals(location.dispName, 'A1');
