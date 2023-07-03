@@ -8,12 +8,12 @@ export class XlsxFile implements TestSource {
 
   constructor() {
     this.wb = null;
+    this.items = new Array<TestItem>(); 
   }
 
   open(filepath: string): void {
     const u8: Uint8Array = Deno.readFileSync(filepath);
     this.wb = XLSX.read(u8);
-    this.items = new Array<TestItem>(); 
   }
   analyze(): void {
     if (!this.wb) throw new Error("file has not opend.");
